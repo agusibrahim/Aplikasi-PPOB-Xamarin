@@ -1,4 +1,5 @@
 # Aplikasi Multiplatform PPOB (Android & iOS)
+### (CONCEPT)
 
 Aplikasi ini dibuat menggunakan Xamarin Forms, sehingga bisa di build ke Android maupun iOS.
 Project sudah menerapkan konsep MVVM sesuai yang dianjurkan untuk Xamarin, juga terdapat [Custom Renderer](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/custom-renderer/) untuk mencustom Componen sesuai sepesifik platform.
