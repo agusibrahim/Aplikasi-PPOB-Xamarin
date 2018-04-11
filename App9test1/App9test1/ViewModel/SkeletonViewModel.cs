@@ -13,6 +13,7 @@ namespace App9test1.ViewModel
         {
             showDialog=new Command(async () =>
             {
+                // test ActionSheet
                 var action = await Application.Current.MainPage.DisplayActionSheet("Are you sure want to delete this file?", "Cancel", "Delete", "Photo Roll", "Email");
 
             });
