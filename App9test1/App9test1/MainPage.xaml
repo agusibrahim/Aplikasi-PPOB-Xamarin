@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:App9test1.ViewModel"
+             Title="Homew"
+             x:Class="App9test1.MainPage">
+
+    <ContentPage.Icon>
+        <OnPlatform x:TypeArguments="FileImageSource" iOS="icon_home.png"/>
+    </ContentPage.Icon>
+    <ContentPage.BindingContext>
+        <viewmodel:MainViewModel/>
+    </ContentPage.BindingContext>
+    <StackLayout Orientation="Vertical" HorizontalOptions="Start" BackgroundColor="White">
+        <Grid HeightRequest="180" BackgroundColor="{StaticResource Primary}" Padding="0,10,0,0">
+            <Image Source="building_pattern.png" Opacity="0.2" HorizontalOptions="FillAndExpand" HeightRequest="180" Aspect="AspectFill"/>
+            <StackLayout Orientation="Vertical" Margin="0,25,5,0" HorizontalOptions="End" Spacing="0">
+                <Label Text="SALDO" TextColor="White" FontSize="11"/>
+                <Label Text="Rp 4.130.001" FontAttributes="Bold" TextColor="White" FontSize="Large"/>
+            </StackLayout>
+            <Image Source="pocky_logo_1.png" WidthRequest="70" HorizontalOptions="Start" VerticalOptions="Start" Margin="20"/>
+        </Grid>
+        <ScrollView>
+        <StackLayout Orientation="Vertical">
+        <StackLayout Orientation="Vertical" Padding="10,10,10,0">
+            <StackLayout Orientation="Horizontal">
+                <BoxView BackgroundColor="OrangeRed" WidthRequest="5" HeightRequest="20" HorizontalOptions="Start"/>
+                <Label Text="Isi Pulsa" FontSize="Medium" TextColor="#555555" HorizontalOptions="StartAndExpand" VerticalTextAlignment="Center" FontAttributes="Bold"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Entry Placeholder="Masukan Nomor Telepon" FontSize="Medium" Keyboard="Telephone" HorizontalOptions="FillAndExpand" FontAttributes="Bold"/>
+                <Button BackgroundColor="{StaticResource PrimaryDark}" Text="NEXT" TextColor="White" HorizontalOptions="End" WidthRequest="70"/>
+            </StackLayout>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" Padding="10,20,0,0">
+            <BoxView BackgroundColor="OrangeRed" WidthRequest="5" HeightRequest="20" HorizontalOptions="Start"/>
+            <Label Text="Pembayaran Lainnya" FontSize="Medium" TextColor="#555555" HorizontalOptions="StartAndExpand" VerticalTextAlignment="Center" FontAttributes="Bold"/>
+        </StackLayout>
+        <Grid VerticalOptions="Center" Margin="0,10,0,0" RowSpacing="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackLayout Orientation="Vertical" Grid.Column="0" Grid.Row="0">
+                <Image Source="icon_sim_card.png" Style="{StaticResource TileIcon}"/>
+                <Label Text="Pulsa" Style="{StaticResource TileLabel}"/>
+            </StackLayout>
+            <StackLayout Orientation="Vertical" Grid.Column="1" Grid.Row="0">
+                <Image Source="icon_internet.png" Style="{StaticResource TileIcon}"/>
+                <Label Text="Paket Data" Style="{StaticResource TileLabel}"/>
+            </StackLayout>
+            <StackLayout Orientation="Vertical" Grid.Column="2" Grid.Row="0">
+                <Image Source="icon_gamepad.png" Style="{StaticResource TileIcon}"/>
+                <Label Text="Vcr. Game" Style="{StaticResource TileLabel}"/>
+            </StackLayout>
+            <StackLayout Orientation="Vertical" Grid.Column="3" Grid.Row="0">
+                <Image Source="icon_telephone.png" Style="{StaticResource TileIcon}"/>
+                <Label Text="Telkom" Style="{StaticResource TileLabel}"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical" Grid.Column="0" Grid.Row="1">
+                <Image Source="icon_monitor.png" Style="{StaticResource TileIcon}"/>
+                <Label Text="TV Kabel" Style="{StaticResource TileLabel}"/>
+            </StackLayout>
+            <StackLayout Orientation="Vertical" Grid.Column="1" Grid.Row="1">
+                <Image Source="icon_computer.png" Style="{StaticResource TileIcon}"/>
+                <Label Text="PGN" Style="{StaticResource TileLabel}"/>
+            </StackLayout>
+            <StackLayout Orientation="Vertical" Grid.Column="2" Grid.Row="1">
+                <Image Source="icon_technology.png" Style="{StaticResource TileIcon}"/>
+                <Label Text="Listrik" Style="{StaticResource TileLabel}"/>
+            </StackLayout>
+            <StackLayout Orientation="Vertical" Grid.Column="3" Grid.Row="1">
+                <Image Source="icon_router.png" Style="{StaticResource TileIcon}"/>
+                <Label Text="Internet" Style="{StaticResource TileLabel}"/>
+            </StackLayout>
+        </Grid>
+        </StackLayout>
+        </ScrollView>
+    </StackLayout>
+
+</ContentPage>

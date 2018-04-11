@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:App9test1.Converters;assembly=App9test1"
+             x:Class="App9test1.App">
+	<Application.Resources>
+
+        <ResourceDictionary>
+            <x:Int32 x:Key="TileIconSize">30</x:Int32>
+            <Color x:Key="Primary">#FFC107</Color>
+            <Color x:Key="PrimaryDark">#FFB02A</Color>
+            <Color x:Key="Accent">#FFC107</Color>
+            <Color x:Key="LightBackgroundColor">#FAFAFA</Color>
+            <Color x:Key="DarkBackgroundColor">#C0C0C0</Color>
+            <Color x:Key="MediumGrayTextColor">#4d4d4d</Color>
+            <Color x:Key="LightTextColor">#999999</Color>
+            
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="{StaticResource Primary}" />
+                <Setter Property="BarTextColor" Value="White" />
+            </Style>
+
+            <converters:NegateBooleanConverter x:Key="negativeBool"/>
+            <Style x:Key="FormIcon" TargetType="Image">
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="WidthRequest" Value="{StaticResource TileIconSize}" />
+                <Setter Property="HeightRequest" Value="{StaticResource TileIconSize}" />
+            </Style>
+            <Style x:Key="FormInput" TargetType="Entry">
+                <Setter Property="BackgroundColor" Value="#55FFB02A" />
+                <Setter Property="PlaceholderColor" Value="#77ffffff" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="HeightRequest">
+                    <Setter.Value>
+                        <OnPlatform x:TypeArguments="x:Double" iOS="35" Android="40"/>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style x:Key="FormSubmit" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#FF5E0D"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="BorderRadius" Value="25"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="WidthRequest">
+                    <Setter.Value>
+                        <OnPlatform x:TypeArguments="x:Double" iOS="220" Android="255"/>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="HeightRequest">
+                    <Setter.Value>
+                        <OnPlatform x:TypeArguments="x:Double" iOS="50" Android="45"/>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style x:Key="TileIcon" TargetType="Image">
+                <Setter Property="WidthRequest" Value="{StaticResource TileIconSize}" />
+                <Setter Property="HeightRequest" Value="{StaticResource TileIconSize}" />
+            </Style>
+            <Style x:Key="TileLabel" TargetType="Label">
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="FontSize" Value="15"/>
+                <Setter Property="TextColor" Value="DarkSlateGray"/>
+            </Style>
+        </ResourceDictionary>
+
+    </Application.Resources>
+</Application>

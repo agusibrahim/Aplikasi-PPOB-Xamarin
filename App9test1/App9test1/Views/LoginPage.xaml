@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:App9test1.ViewModel"
+             NavigationPage.HasNavigationBar="False"
+             xmlns:control="clr-namespace:App9test1.Controls"
+             x:Class="App9test1.Views.LoginPage">
+    <ContentPage.BindingContext>
+        <viewmodel:LoginViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <Grid BackgroundColor="#FFCC2A">
+            <Image Source="city_background.png" HorizontalOptions="CenterAndExpand" VerticalOptions="End"/>
+            <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand" HorizontalOptions="Center" Margin="0,40,0,0">
+                <Image Source="pocky_logo_1.png" HeightRequest="140" WidthRequest="140"/>
+                <Label Text="Simple Solution In Your Hand" TextColor="White" FontSize="Medium" FontAttributes="Bold,Italic" HorizontalTextAlignment="Center"/>
+                
+                <Grid Padding="20,20,20,0" RowSpacing="20" Margin="0,10,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Image Source="icon_username.png" Grid.Column="0" Grid.Row="0" Style="{StaticResource FormIcon}"/>
+                    <Entry Placeholder="Username" Keyboard="Default" Grid.Column="1" Grid.Row="0" Style="{StaticResource FormInput}" IsEnabled="{Binding isBusy,Converter={StaticResource negativeBool}}"/>
+                    <Image Source="icon_lockpassword.png" Grid.Column="0" Grid.Row="1" Style="{StaticResource FormIcon}"/>
+                    <control:EntryLogin Placeholder="Password" IsPassword="True" Grid.Column="1" Grid.Row="1" Style="{StaticResource FormInput}" IsEnabled="{Binding isBusy,Converter={StaticResource negativeBool}}"/>
+                    <Label Text=" Forget Password?" TextColor="White" FontSize="Small" Grid.Column="1" Grid.Row="2"/>
+                </Grid>
+
+                <Grid HorizontalOptions="Center">
+                    <control:FlatButton Text="LOGIN" Command="{Binding LoginCommand}" Style="{StaticResource FormSubmit}" IsEnabled="{Binding isBusy,Converter={StaticResource negativeBool}}"/>
+                    <ActivityIndicator IsRunning="{Binding isBusy}" HorizontalOptions="Center" Margin="0,0,100,0" Color="White"/>
+                </Grid>
+                <StackLayout Orientation="Vertical" IsVisible="{Binding isFpSupported}">
+                    <Label Text="OR" HorizontalOptions="Center" FontSize="Small" TextColor="White"/>
+                    <Button Text="Login with Fingerprint" HorizontalOptions="Center" FontSize="Medium" HeightRequest="20" TextColor="White" FontAttributes="Bold" BackgroundColor="Transparent" Command="{Binding LoginFpCommand}"/>
+                </StackLayout>
+                <Label Text="Dont Have an Account?" FontSize="Small" TextColor="White" HorizontalTextAlignment="Center" Margin="0,10,0,0"/>
+                <Label Text="Register for Free" FontAttributes="Bold" FontSize="Small" TextColor="White" HorizontalTextAlignment="Center"/>
+
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

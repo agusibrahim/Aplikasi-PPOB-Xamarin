@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:local="clr-namespace:App9test1"
+            Title="Welcome to Apps"
+            BarBackgroundColor="{StaticResource Primary}"
+            xmlns:view="clr-namespace:App9test1.Views"
+            BarTextColor="White"
+            NavigationPage.BackButtonTitle="Back"
+             x:Class="App9test1.TabbedPage1">
+    <!--Pages can be added as references or inline-->
+    <NavigationPage.HasNavigationBar>
+        <OnPlatform x:TypeArguments="x:Boolean" iOS="False" Android="True"/>
+    </NavigationPage.HasNavigationBar>
+
+    <local:MainPage />
+
+    <!--view:Page1 Title="Transaction">
+        <view:Page1.Icon>
+            <OnPlatform x:TypeArguments="FileImageSource" iOS="icon_repeat.png"/>
+        </view:Page1.Icon>
+    </>
+    <view:Page1 Title="Wallet">
+        <view:Page1.Icon>
+            <OnPlatform x:TypeArguments="FileImageSource" iOS="icon_pocket.png"/>
+        </view:Page1.Icon>
+    </view:Page1>
+    <view:Page1 Title="Profile">
+        <view:Page1.Icon>
+            <OnPlatform x:TypeArguments="FileImageSource" iOS="icon_user.png"/>
+        </view:Page1.Icon>
+    </view:Page1-->
+    <NavigationPage Title="Transaction">
+        <view:Page1.Icon>
+            <OnPlatform x:TypeArguments="FileImageSource" iOS="icon_repeat.png"/>
+        </view:Page1.Icon>
+        <x:Arguments>
+            <view:Page1 />
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="Wallet">
+        <view:Page1.Icon>
+            <OnPlatform x:TypeArguments="FileImageSource" iOS="icon_pocket.png"/>
+        </view:Page1.Icon>
+        <x:Arguments>
+            <view:Page1 />
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="Profile">
+        <view:Page1.Icon>
+            <OnPlatform x:TypeArguments="FileImageSource" iOS="icon_user.png"/>
+        </view:Page1.Icon>
+        <x:Arguments>
+            <view:Page1 />
+        </x:Arguments>
+    </NavigationPage>
+</TabbedPage>

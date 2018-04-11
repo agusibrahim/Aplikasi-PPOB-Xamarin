@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Demo Page"
+             NavigationPage.BackButtonTitle="Hello"
+             xmlns:viewmodel="clr-namespace:App9test1.ViewModel"
+             BackgroundColor="GhostWhite"
+             x:Class="App9test1.Views.Page1">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Help" Order="Primary" Icon="ic_share_white.png"/>
+    </ContentPage.ToolbarItems>
+    <NavigationPage.HasNavigationBar>
+        <OnPlatform x:TypeArguments="x:Boolean" iOS="True" Android="False"/>
+    </NavigationPage.HasNavigationBar>
+    <ContentPage.BindingContext>
+        <viewmodel:SkeletonViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center">
+            <Label Text="Hello, this is Demo pages"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Button BackgroundColor="{StaticResource Primary}" WidthRequest="100" HorizontalOptions="Center" FontAttributes="Bold" Text="Show Dialog" TextColor="White" Command="{Binding showDialog}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
